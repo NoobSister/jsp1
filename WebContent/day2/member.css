@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gamja+Flower&family=Nanum+Pen+Script&display=swap');
+* {
+    font-family: 'Do Hyeon', sans-serif;
+}
+td {
+    /* border: 1px solid pink; */
+    padding: 8px 12px;
+    color: black;
+    background-color: #d1c4e9;
+    border: 3px solid black;
+    border-radius: 4px;
+}
+input {
+    padding: 7px;
+    border-radius: 4px;
+}
+select {
+    padding: 7px;
+    border-radius: 4px;
+    width: 40%;
+}
+/* 속성을 이용한 선택자 */
+input[type=submit], input[type=reset] {
+    width: 40%;
+    margin: auto;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    color: black;
+    background-color: #a094b7;
+}
+
+input[type=submit]:hover, input[type=reset]:hover {
+    background-color: #fff7ff;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=number] {
+    width: 70%;
+    height: 10px;
+}
+
+/* 
+    UI 구현 : 레이아웃, 색상, 글꼴
+    참고 사이트 : https://material.io/resources
+*/

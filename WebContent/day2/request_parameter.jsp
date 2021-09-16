@@ -14,8 +14,12 @@
 <!-- 요청 ULR : http://localhost:8082/jsp1/day2/request_parameter.jsp?name=홍길동&age=34 
 							ㄴ ** Request Method : GET -->
 	<h3>Request Parameter 연습</h3>
+	<!-- 이 jsp 파일의 역할 : 사용자가 보낸 데이터를 받아서 처리합니다. -->
 	<hr>
 	<%
+		// form data(method post)로 전달된 데이터의 인코딩 필요합니다.
+		request.setCharacterEncoding("UTF-8");
+
 		//request 의 파라미터 가져오기 입니다. 파라미터가 10개 라면... getParameter() 메소드는 몇 번? 10번
 				// 예고편 : DTO(VO) 타입 클래스를 이용해서 파라미터와 객체를 자동으로 매핑(프레임워크)
 		String name = request.getParameter("name");		// "name" 은 ? 뒤에 파라미터 이름
@@ -30,7 +34,20 @@
 	</ul>
 	<!-- 파라미터값으로 MyUser 객체를 생성해 봅시다. -->
 	<%
-		if (age == null) age = "999";
+//		if (age == null) age = "999";
+	if (age == null) {
+	%>
+		<script type="text/javascript">
+			alert('나이를 입력하세요.');
+		</script>
+		
+	<%
+	
+		// 브라우저에 태그를 print 하라는 것은 -> 응답할 html 형식 문서에 태그가 추가되는 것입니다.
+//		out.print("<script>");
+//	    out.print("alert('나이를 반드시 입력해야합니다.')");
+//	    out.print("</script>");
+	} else {
 		MyUser my2 = new MyUser(name, Integer.parseInt(age), location);
 		// Integer.parseInt(age) -> age가 null 이면 오류
 		out.print(my2);		// out 은 내장객체 -> 브라우저에 출력
@@ -41,6 +58,9 @@
 		<li>나이 : <%= my2.getAge() %></li>
 		<li>지역 : <%= my2.getLocation() %></li>
 	</ul>
+	<%
+		}	// if end
+	%>
 	
 	
 </body>
