@@ -1,46 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gamja+Flower&family=Nanum+Pen+Script&display=swap');
-* {
-    font-family: 'Do Hyeon', sans-serif;
-}
 td {
-    /* border: 1px solid pink; */
-    padding: 8px 12px;
-    color: black;
-    background-color: #d1c4e9;
-    border: 3px solid black;
-    border-radius: 4px;
+	padding: 10px;
+	/* 	border: 1px solid gray; */
 }
-input {
-    padding: 7px;
-    border-radius: 4px;
+
+table {
+	border-bottom: 1px solid gray;
+	border-top: 1px solid gray;
 }
-select {
-    padding: 7px;
-    border-radius: 4px;
-    width: 40%;
+
+input, select {
+	padding: 7px;
+	border-radius: 4px;
+	border: 2px solid #ccc;
+	box-sizing: border-box;
 }
-/* 속성을 이용한 선택자 */
+
+input[type=text], input[type=password], input[type=email] {
+	width: 70%;
+}
+
+input[type=number], select {
+	width: 20%;
+}
+
 input[type=submit], input[type=reset] {
-    width: 40%;
-    margin: auto;
-    padding: 10px;
-    font-size: 20px;
-    cursor: pointer;
-    border: none;
-    color: black;
-    background-color: #a094b7;
+	padding: 7px 15px;
+	margin: 7px 15px;
+	cursor: pointer;
+	background: #cc3399;
+	font-size: 1.1em;
+	color: white;
+	border: none;
 }
 
 input[type=submit]:hover, input[type=reset]:hover {
-    background-color: #fff7ff;
+	background: #cc6699;
 }
 
-input[type=text], input[type=password], input[type=email], input[type=number] {
-    width: 70%;
-    height: 10px;
+label {
+	display: inline-block;
+	width: 60%;
+	padding: 10px;
+	margin: auto;
+	background: #cc6699;
+	border-radius: 4px;
+	text-align: center;
+	color: #eee;
+	width: 60%;
 }
-
-/* 
-    UI 구현 : 레이아웃, 색상, 글꼴
-    참고 사이트 : https://material.io/resources
-*/
