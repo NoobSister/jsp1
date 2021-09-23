@@ -27,3 +27,11 @@ insert into customer (name,password,email,gender)
 	
 insert into customer (name,password,email,gender)
 	values ('홍길동', '11111111', 'hong@naver.com', 'female가나다라f');
+	
+-- 고객 정보 수정 요구사항 : email, addr 을 변경할 수 있다.
+-- 						검색 조건은 pk 컬럼 idx로 합니다.
+
+update customer set email = 'gil@gamil.com', addr = '울산' where idx = 1;
+
+delete from customer where idx=0;
+commit;

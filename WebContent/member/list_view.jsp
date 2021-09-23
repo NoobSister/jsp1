@@ -37,6 +37,7 @@
 </style>
 </head>
 <body>
+<!-- 실행 url은 list.jsp 로 합니다. -->
 	<h3>고객리스트 WELCOME!!</h3>
 	<ul>
 		<li id="name">이름</li>
@@ -52,7 +53,7 @@
 		//out.print(list);
 	%>
 	<ul>
-		<li id="name"><%= cus.getName() %></li>
+		<li id="name"><a href="update.jsp?idx=<%= cus.getIdx() %>"><%= cus.getName() %></a></li>
 		<li><%= cus.getAge() %> 세 <%-- (<%= (cus.getGender().equals("male") ? "남":"여") %>) --%> </li>
 		<li><%= cus.getGender() %></li>
 		<li id="email"><%= cus.getEmail() %></li>
