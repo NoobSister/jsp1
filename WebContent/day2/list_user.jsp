@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>JSP 프로젝트[2]</title>
+<title>JSP1 프로젝트[2]</title>
 </head>
 <body>
 	<!-- 데이터베이스에서 쿼리결과로 받아온 데이터입니다. : list -->

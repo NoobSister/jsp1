@@ -36,7 +36,9 @@
 	<%
 //		if (age == null) age = "999";
 	// 매우 중요. 오류 생기지 않도록 구현하세요.
-	if (age == null || age.length() == 0) {	// java.lang.NemberFormatException : For input string : "" 오류 처리 age = ""일 때
+	if (age == null || age.length() == 0) {
+		// java.lang.NemberFormatException : For input string : "" 오류 처리 age = ""일 때
+		// 		위으ㅢ 두가지 경우 모두 -> Integer.parseInt 메소드에서 오류
 	%>
 		<script type="text/javascript">
 			alert('나이를 입력하세요.');
