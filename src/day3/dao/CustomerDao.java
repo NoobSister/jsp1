@@ -103,7 +103,7 @@ public class CustomerDao {
 	}
 	
 	public void deleteOk(int idx) {
-		String sql = "delete from customer where idx=?";
+		String sql = "delete from customer where idx = ?";
 		Connection conn = MySQLConnectionUtil.connect();
 		PreparedStatement pstmt = null;
 		
