@@ -1,4 +1,4 @@
-package day6.mybatis;
+package day5.mybatis;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,7 +17,7 @@ public class SqlSessionBean {
 	
 	public static SqlSessionFactory sqlSessionFactory;
 	   static {		// 변수들이 static 영역에 저장됩니다.
-	      String resource = "day6/mybatis/mybatis-config.xml";	// mybatis 설정파일
+	      String resource = "day5/mybatis/mybatis-config.xml";	// mybatis 설정파일
 	      InputStream inputStream=null;			// 파일을 읽기 위한 입력 스트림
 	   
 	   

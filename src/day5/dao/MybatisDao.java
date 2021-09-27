@@ -1,4 +1,4 @@
-package day6.dao;
+package day5.dao;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import day3.dto.Customer;
-import day6.mybatis.SqlSessionBean;
+import day5.mybatis.SqlSessionBean;
 
 public class MybatisDao {
 	
@@ -41,11 +41,28 @@ public class MybatisDao {
 	
 	public int insert(Customer cus) {
 		//SqlSession mapper = sqlFactory.openSession(true);	// auto commit 을 true, 기본값 false
+		SqlSession mapper = sqlFactory.openSession();	// auto commit? 	n값 확인
+		// 파라미터 cus 의 idx 프로퍼티에 자동증가 컬럼값 저장?
+		mapper.commit();
+		mapper.close();
+		return cus.getIdx();
+	}
+	
+	public int delete(int idx) {
 		SqlSession mapper = sqlFactory.openSession();
-		int n = mapper.insert("insert", cus);	// auto commit? 	n값 확인
+		int n = mapper.delete("delete", idx);
 		mapper.commit();
 		mapper.close();
 		return n;
 	}
+	
+	public int update(Customer cus) {
+		SqlSession mapper = sqlFactory.openSession();
+		int n = mapper.update("update", cus);
+		mapper.commit();
+		mapper.close();
+		return n;
+	}
+	
 	
 }
